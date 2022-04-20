@@ -1,0 +1,94 @@
+{
+  "projectType": "application",
+  "root": "apps/kickstartgreen",
+  "sourceRoot": "apps/kickstartgreen/src",
+  "prefix": "kickstartgreen",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/kickstartgreen",
+        "index": "apps/kickstartgreen/src/index.html",
+        "main": "apps/kickstartgreen/src/main.ts",
+        "polyfills": "apps/kickstartgreen/src/polyfills.ts",
+        "tsConfig": "apps/kickstartgreen/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/kickstartgreen/src/favicon.ico",
+          "apps/kickstartgreen/src/assets"
+        ],
+        "styles": ["apps/kickstartgreen/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/kickstartgreen/src/environments/environment.ts",
+              "with": "apps/kickstartgreen/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "kickstartgreen:build:production"
+        },
+        "development": {
+          "browserTarget": "kickstartgreen:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "kickstartgreen:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/kickstartgreen/src/**/*.ts",
+          "apps/kickstartgreen/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/kickstartgreen"],
+      "options": {
+        "jestConfig": "apps/kickstartgreen/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,28 @@
+{
+  "root": "apps/kickstartgreen-e2e",
+  "sourceRoot": "apps/kickstartgreen-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/kickstartgreen-e2e/cypress.json",
+        "devServerTarget": "kickstartgreen:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "kickstartgreen:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/kickstartgreen-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["kickstartgreen"]
+}
