@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/trees-domain/plant-util",
+  "sourceRoot": "libs/trees-domain/plant-util/src",
+  "prefix": "plant",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/trees-domain/plant-util"],
+      "options": {
+        "jestConfig": "libs/trees-domain/plant-util/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/trees-domain/plant-util/src/**/*.ts",
+          "libs/trees-domain/plant-util/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:trees", "type:util"]
+}

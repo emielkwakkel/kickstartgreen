@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/trees-domain/plant-ui",
+  "sourceRoot": "libs/trees-domain/plant-ui/src",
+  "prefix": "plant",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/trees-domain/plant-ui"],
+      "options": {
+        "jestConfig": "libs/trees-domain/plant-ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/trees-domain/plant-ui/src/**/*.ts",
+          "libs/trees-domain/plant-ui/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:trees", "type:ui"]
+}

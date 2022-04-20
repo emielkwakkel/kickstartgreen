@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/banking-domain/dashboard-ui",
+  "sourceRoot": "libs/banking-domain/dashboard-ui/src",
+  "prefix": "dash",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/banking-domain/dashboard-ui"],
+      "options": {
+        "jestConfig": "libs/banking-domain/dashboard-ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/banking-domain/dashboard-ui/src/**/*.ts",
+          "libs/banking-domain/dashboard-ui/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:banking", "type:ui"]
+}
