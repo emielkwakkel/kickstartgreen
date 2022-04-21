@@ -28,8 +28,7 @@
       },
       "configurations": {
         "production": {
-          "budgets": [
-            {
+          "budgets": [{
               "type": "initial",
               "maximumWarning": "500kb",
               "maximumError": "1mb"
@@ -40,12 +39,10 @@
               "maximumError": "4kb"
             }
           ],
-          "fileReplacements": [
-            {
-              "replace": "apps/kickstartgreen/src/environments/environment.ts",
-              "with": "apps/kickstartgreen/src/environments/environment.prod.ts"
-            }
-          ],
+          "fileReplacements": [{
+            "replace": "apps/kickstartgreen/src/environments/environment.ts",
+            "with": "apps/kickstartgreen/src/environments/environment.prod.ts"
+          }],
           "outputHashing": "all"
         },
         "development": {

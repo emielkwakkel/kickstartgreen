@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared-domain/material-ui",
+  "sourceRoot": "libs/shared-domain/material-ui/src",
+  "prefix": "shared",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared-domain/material-ui"],
+      "options": {
+        "jestConfig": "libs/shared-domain/material-ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared-domain/material-ui/src/**/*.ts",
+          "libs/shared-domain/material-ui/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:shared", "type:ui"]
+}

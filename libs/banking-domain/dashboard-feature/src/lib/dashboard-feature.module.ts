@@ -1,15 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { DashboardUiModule } from '@banking/dashboard-ui';
+import { MaterialUiModule } from '@shared/material-ui/src';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
+  declarations: [
+    DashboardComponent,
+  ],
   imports: [
     CommonModule,
     DashboardUiModule,
-    RouterModule.forChild([
-      /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
-    ]),
+    MaterialUiModule,
   ],
+  exports: [
+    DashboardComponent,
+  ]
 })
 export class BankingDashboardFeatureModule {}
