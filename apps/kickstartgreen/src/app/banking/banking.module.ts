@@ -10,10 +10,16 @@ export const BANKING_ROUTES: Routes = [
   {
     path: 'dashboard',
     component: BankingDashboardPageComponent,
+    data: {
+      title: 'Banking'
+    },
   },
   {
     path: 'payment',
     component: BankingPaymentPageComponent,
+    data: {
+      title: 'Payment'
+    },
   },
 ];
 @NgModule({
