@@ -17,7 +17,7 @@
     "paths": {
       "@banking/*": ["libs/banking-domain/*"],
       "@shared/*": ["libs/shared-domain/*"],
-      "@trees/*": ["libs/trees-domain/*"],
+      "@trees/*": ["libs/trees-domain/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
