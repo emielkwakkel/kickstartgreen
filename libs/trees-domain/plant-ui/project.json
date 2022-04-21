@@ -6,7 +6,9 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/trees-domain/plant-ui"],
+      "outputs": [
+        "coverage/libs/trees-domain/plant-ui"
+      ],
       "options": {
         "jestConfig": "libs/trees-domain/plant-ui/jest.config.js",
         "passWithNoTests": true
@@ -22,5 +24,8 @@
       }
     }
   },
-  "tags": ["domain:trees", "type:ui"]
+  "tags": [
+    "domain:trees",
+    "type:ui"
+  ]
 }

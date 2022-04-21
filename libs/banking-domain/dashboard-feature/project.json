@@ -6,7 +6,9 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/banking-domain/dashboard-feature"],
+      "outputs": [
+        "coverage/libs/banking-domain/dashboard-feature"
+      ],
       "options": {
         "jestConfig": "libs/banking-domain/dashboard-feature/jest.config.js",
         "passWithNoTests": true
@@ -22,5 +24,8 @@
       }
     }
   },
-  "tags": ["domain:banking", "type:feature"]
+  "tags": [
+    "domain:banking",
+    "type:feature"
+  ]
 }
