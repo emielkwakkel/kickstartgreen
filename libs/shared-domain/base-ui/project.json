@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared-domain/base-ui",
+  "sourceRoot": "libs/shared-domain/base-ui/src",
+  "prefix": "shared",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared-domain/base-ui"],
+      "options": {
+        "jestConfig": "libs/shared-domain/base-ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared-domain/base-ui/src/**/*.ts",
+          "libs/shared-domain/base-ui/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:shared", "type:ui"]
+}
