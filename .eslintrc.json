@@ -13,6 +13,18 @@
             "allow": [],
             "depConstraints": [
               {
+                "sourceTag": "domain:banking",
+                "onlyDependOnLibsWithTags": ["domain:banking", "domain:shared"]
+              },
+              {
+                "sourceTag": "domain:trees",
+                "onlyDependOnLibsWithTags": ["domain:trees", "domain:shared"]
+              },
+              {
+                "sourceTag": "domain:shared",
+                "onlyDependOnLibsWithTags": []
+              },
+              {
                 "sourceTag": "*",
                 "onlyDependOnLibsWithTags": ["*"]
               }
