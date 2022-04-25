@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { PlantUiModule } from '@trees/plant-ui';
 import { PlantUtilModule } from '@trees/plant-util';
 
@@ -9,9 +8,6 @@ import { PlantUtilModule } from '@trees/plant-util';
     CommonModule,
     PlantUiModule,
     PlantUtilModule,
-    RouterModule.forChild([
-      /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
-    ]),
   ],
 })
 export class PlantFeatureModule {}
