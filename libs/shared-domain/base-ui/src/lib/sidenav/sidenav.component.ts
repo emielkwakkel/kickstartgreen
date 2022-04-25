@@ -1,8 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Router, RoutesRecognized } from '@angular/router';
+
+export interface SideNavMenu {
+  title: string;
+  url: string;
+  icon: string;
+}
 
 @Component({
   selector: 'shared-sidenav',
@@ -10,6 +16,7 @@ import { Router, RoutesRecognized } from '@angular/router';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
+  @Input() menu: SideNavMenu[] = [];
   title = '';
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -28,4 +35,7 @@ export class SidenavComponent implements OnInit {
     });
   }
 
+  navigateByUrl(url: string) {
+    this.router.navigateByUrl(url);
+  }
 }
