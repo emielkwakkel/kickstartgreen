@@ -23,6 +23,13 @@ const routes: Routes = [
     loadChildren: () => import('./banking/banking.module').then((esModule) => esModule.BankingModule),
   },
   {
+    path: 'trees',
+    data: {
+      title: 'Trees'
+    },
+    loadChildren: () => import('./trees/trees.module').then((esModule) => esModule.TreesModule),
+  },
+  {
     path: 'home',
     component: HomePageComponent,
     data: {
