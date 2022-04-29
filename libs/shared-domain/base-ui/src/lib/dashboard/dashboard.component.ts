@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, ComponentFactoryResolver, Directive, Input, QueryList, ViewChildren, ViewContainerRef } from '@angular/core';
-import { Observable } from 'rxjs';
+import { AfterViewInit, Component, ComponentFactoryResolver, ComponentRef, Directive, Input, QueryList, ViewChildren, ViewContainerRef } from '@angular/core';
 
 @Directive({
   selector: '[sharedHost]',
@@ -39,12 +38,14 @@ export class SharedDashboardComponent implements AfterViewInit {
   }
 
   private initCards() {
-    this.cards?.forEach((card: any, index: any) => this.addComponent(card.component, index));
+    this.cards?.forEach((card: any, index: any) => this.addComponent(card.component, index, card.data));
   }
 
-  private addComponent(component: any, index: any) {
+  private addComponent(component: any, index: any, data: any) {
     const container = this.containers.toArray()[index];
     const factory = this.resolver.resolveComponentFactory(component);
-    container.createComponent(factory);
+    
+    const createComponent: ComponentRef<typeof component> = container.createComponent(factory);
+    createComponent.instance.data = data;
   }
 }

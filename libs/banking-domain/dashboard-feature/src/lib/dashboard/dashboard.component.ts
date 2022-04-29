@@ -15,9 +15,9 @@ export class DashboardComponent {
   cards: Observable<DashboardCard[]> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       return [
-        { title: 'Overview', component: OverviewUiComponent, cols: 2, rows: .5 },
-        { title: 'Payment: Latest', component: LatestTransactionsUiComponent, cols: matches ? 2 : 1, rows: 1 },
-        { title: 'Savings: Latest', component: LatestTransactionsUiComponent, cols: matches ? 2 : 1, rows: 1 },
+        { title: 'Overview', component: OverviewUiComponent, data: {}, cols: 2, rows: .5 },
+        { title: 'Payment: Latest', component: LatestTransactionsUiComponent, data: { account: 'payment'}, cols: matches ? 2 : 1, rows: 1 },
+        { title: 'Savings: Latest', component: LatestTransactionsUiComponent, data: { account: 'savings'}, cols: matches ? 2 : 1, rows: 1 },
       ];
     })
   );
