@@ -2,12 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialUiModule } from '@shared/material-ui/src'
 import { OverviewUiComponent } from './overview/overview.component';
+import { LatestTransactionsUiComponent } from './latest-transactions/latest-transactions.component';
 
-export { OverviewUiComponent };
+export { OverviewUiComponent, LatestTransactionsUiComponent };
+
+const components = [
+  OverviewUiComponent,
+  LatestTransactionsUiComponent
+]
 
 @NgModule({
-  declarations: [OverviewUiComponent],
+  declarations: components,
   imports: [CommonModule, MaterialUiModule],
-  exports: [OverviewUiComponent],
+  exports: components,
 })
 export class DashboardUiModule {}

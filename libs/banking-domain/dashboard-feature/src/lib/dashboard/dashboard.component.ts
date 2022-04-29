@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { OverviewUiComponent } from '@banking/dashboard-ui/src';
+import { OverviewUiComponent, LatestTransactionsUiComponent } from '@banking/dashboard-ui';
 import { Observable } from 'rxjs';
 import { DashboardCard } from '@shared/base-ui/src/lib/dashboard/dashboard.component';
 
@@ -16,8 +16,8 @@ export class DashboardComponent {
     map(({ matches }) => {
       return [
         { title: 'Overview', component: OverviewUiComponent, cols: 2, rows: .5 },
-        { title: 'Payment: Latest transactions', component: OverviewUiComponent, cols: matches ? 2 : 1, rows: 1 },
-        { title: 'Savings: Latest transactions', component: OverviewUiComponent, cols: matches ? 2 : 1, rows: 1 },
+        { title: 'Payment: Latest', component: LatestTransactionsUiComponent, cols: matches ? 2 : 1, rows: 1 },
+        { title: 'Savings: Latest', component: LatestTransactionsUiComponent, cols: matches ? 2 : 1, rows: 1 },
       ];
     })
   );
