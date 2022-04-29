@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/banking-domain/account-util",
+  "sourceRoot": "libs/banking-domain/account-util/src",
+  "prefix": "shared",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/banking-domain/account-util"],
+      "options": {
+        "jestConfig": "libs/banking-domain/account-util/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/banking-domain/account-util/src/**/*.ts",
+          "libs/banking-domain/account-util/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:banking", "type:util"]
+}

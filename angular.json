@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "banking-domain-account-util": "libs/banking-domain/account-util",
     "banking-domain-dashboard-feature": "libs/banking-domain/dashboard-feature",
     "banking-domain-dashboard-ui": "libs/banking-domain/dashboard-ui",
     "kickstartgreen": "apps/kickstartgreen",
