@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { SidenavComponent } from './sidenav.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('SidenavComponent', () => {
   let component: SidenavComponent;
@@ -24,6 +25,7 @@ describe('SidenavComponent', () => {
         MatListModule,
         MatSidenavModule,
         MatToolbarModule,
+        RouterTestingModule
       ]
     }).compileComponents();
   }));
