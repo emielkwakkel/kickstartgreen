@@ -8,7 +8,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home/home-page.component';
 import { BaseUiModule } from '@shared/base-ui';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 import { GraphQLUtilModule } from '@shared/graphql-util';
 
 const routes: Routes = [
@@ -20,31 +20,35 @@ const routes: Routes = [
   {
     path: 'banking',
     data: {
-      title: 'Banking'
+      title: 'Banking',
     },
-    loadChildren: () => import('./banking/banking.module').then((esModule) => esModule.BankingModule),
+    loadChildren: () =>
+      import('./banking/banking.module').then(
+        (esModule) => esModule.BankingModule
+      ),
   },
   {
     path: 'trees',
     data: {
-      title: 'Trees'
+      title: 'Trees',
     },
-    loadChildren: () => import('./trees/trees.module').then((esModule) => esModule.TreesModule),
+    loadChildren: () =>
+      import('./trees/trees.module').then((esModule) => esModule.TreesModule),
   },
   {
     path: 'home',
     component: HomePageComponent,
     data: {
-      title: 'Home'
+      title: 'Home',
     },
   },
   {
     path: '**',
     component: HomePageComponent,
     data: {
-      title: 'Not found'
+      title: 'Not found',
     },
-  }
+  },
 ];
 
 @NgModule({

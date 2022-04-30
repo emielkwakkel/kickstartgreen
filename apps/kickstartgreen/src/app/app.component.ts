@@ -17,6 +17,6 @@ export class AppComponent {
       title: 'Plant trees',
       url: 'trees/dashboard',
       icon: 'forest',
-    }
-  ]
+    },
+  ];
 }

@@ -5,28 +5,24 @@ import { BankingDashboardPageComponent } from './dashboard/dashboard-page.compon
 import { BankingDashboardFeatureModule } from '@banking/dashboard-feature';
 import { BankingPaymentPageComponent } from './payment/payment-page.component';
 
-
 export const BANKING_ROUTES: Routes = [
   {
     path: 'dashboard',
     component: BankingDashboardPageComponent,
     data: {
-      title: 'Banking'
+      title: 'Banking',
     },
   },
   {
     path: 'payment',
     component: BankingPaymentPageComponent,
     data: {
-      title: 'Payment'
+      title: 'Payment',
     },
   },
 ];
 @NgModule({
-  declarations: [
-    BankingDashboardPageComponent,
-    BankingPaymentPageComponent,
-  ],
+  declarations: [BankingDashboardPageComponent, BankingPaymentPageComponent],
   imports: [
     CommonModule,
     BankingDashboardFeatureModule,

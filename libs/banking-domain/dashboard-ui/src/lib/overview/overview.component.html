@@ -2,7 +2,7 @@
   <ng-container matColumnDef="type">
     <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
     <mat-cell *matCellDef="let element">
-      <mat-icon>{{element.type}}</mat-icon>
+      <mat-icon>{{ element.type }}</mat-icon>
     </mat-cell>
   </ng-container>
 
@@ -11,10 +11,10 @@
     <mat-cell *matCellDef="let element">
       <div>
         <div>
-          <h4>{{element.account}}</h4>
+          <h4>{{ element.account }}</h4>
         </div>
         <div>
-          <p>{{element.name}}</p>
+          <p>{{ element.name }}</p>
         </div>
       </div>
     </mat-cell>
@@ -22,9 +22,11 @@
 
   <ng-container matColumnDef="total">
     <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.total | currency:'EUR' }} </mat-cell>
+    <mat-cell *matCellDef="let element">
+      {{ element.total | currency: 'EUR' }}
+    </mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
 </mat-table>

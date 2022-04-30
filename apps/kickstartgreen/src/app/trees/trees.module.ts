@@ -5,28 +5,24 @@ import { TreesDashboardPageComponent } from './dashboard/dashboard-page.componen
 import { TreesPlantPageComponent } from './plant/plant-page.component';
 import { TreesDashboardFeatureModule } from '@trees/dashboard-feature';
 
-
 export const TREES_ROUTES: Routes = [
   {
     path: 'dashboard',
     component: TreesDashboardPageComponent,
     data: {
-      title: 'Trees Dashboard'
+      title: 'Trees Dashboard',
     },
   },
   {
     path: 'plant',
     component: TreesPlantPageComponent,
     data: {
-      title: 'Plant trees'
+      title: 'Plant trees',
     },
   },
 ];
 @NgModule({
-  declarations: [
-    TreesPlantPageComponent,
-    TreesDashboardPageComponent,
-  ],
+  declarations: [TreesPlantPageComponent, TreesDashboardPageComponent],
   imports: [
     CommonModule,
     TreesDashboardFeatureModule,

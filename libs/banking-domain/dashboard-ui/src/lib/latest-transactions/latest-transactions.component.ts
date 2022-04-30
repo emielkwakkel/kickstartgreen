@@ -5,18 +5,18 @@ import { AccountService } from '@banking/account-util/src/lib/account.service';
 @Component({
   selector: 'dash-latest-transactions',
   templateUrl: './latest-transactions.component.html',
-  styleUrls: ['./latest-transactions.component.css']
+  styleUrls: ['./latest-transactions.component.css'],
 })
 export class LatestTransactionsUiComponent implements OnInit {
-  @Input() data: { account: string } = { account: 'payment'};
+  @Input() data: { account: string } = { account: 'payment' };
   displayedColumns = ['category', 'account', 'amount'];
   dataSource = new MatTableDataSource([{}]);
 
   constructor(private accountService: AccountService) {}
 
   ngOnInit(): void {
-      this.accountService.getTransactions(this.data.account).subscribe(transactions =>
-        this.dataSource.data = transactions
-      );
+    this.accountService
+      .getTransactions(this.data.account)
+      .subscribe((transactions) => (this.dataSource.data = transactions));
   }
 }

@@ -24,7 +24,7 @@ describe('SharedDashboardComponent', () => {
         MatGridListModule,
         MatIconModule,
         MatMenuModule,
-      ]
+      ],
     }).compileComponents();
   }));
 
@@ -38,12 +38,12 @@ describe('SharedDashboardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  Array.from({ length: 200 }, (_, idx) => ++idx).forEach(index => {
+  Array.from({ length: 200 }, (_, idx) => ++idx).forEach((index) => {
     it(`should return index ${index}`, (done) => {
       setTimeout(() => {
         expect(index).toBe(index);
         done();
       }, 150);
-    })
-  })
+    });
+  });
 });
