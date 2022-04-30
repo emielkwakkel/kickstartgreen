@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared-domain/graphql-util",
+  "sourceRoot": "libs/shared-domain/graphql-util/src",
+  "prefix": "kickstartgreen",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared-domain/graphql-util"],
+      "options": {
+        "jestConfig": "libs/shared-domain/graphql-util/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared-domain/graphql-util/src/**/*.ts",
+          "libs/shared-domain/graphql-util/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:shared", "type:util"]
+}

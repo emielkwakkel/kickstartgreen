@@ -7,7 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home/home-page.component';
-import { BaseUiModule } from '@shared/base-ui'
+import { BaseUiModule } from '@shared/base-ui';
+import { HttpClientModule } from '@angular/common/http'
+import { GraphQLUtilModule } from '@shared/graphql-util';
 
 const routes: Routes = [
   {
@@ -53,6 +55,8 @@ const routes: Routes = [
     PlantFeatureModule,
     BrowserAnimationsModule,
     LayoutModule,
+    GraphQLUtilModule,
+    HttpClientModule,
   ],
   declarations: [AppComponent, HomePageComponent],
   bootstrap: [AppComponent],
