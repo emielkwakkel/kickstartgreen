@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { TreesDashboardPageComponent } from './dashboard/dashboard-page.component';
 import { TreesPlantPageComponent } from './plant/plant-page.component';
+import { TreesDashboardFeatureModule } from '@trees/dashboard-feature';
 
 
-export const BANKING_ROUTES: Routes = [
+export const TREES_ROUTES: Routes = [
   {
     path: 'dashboard',
     component: TreesDashboardPageComponent,
@@ -28,7 +29,8 @@ export const BANKING_ROUTES: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(BANKING_ROUTES),
+    TreesDashboardFeatureModule,
+    RouterModule.forChild(TREES_ROUTES),
   ],
 })
 export class TreesModule {}

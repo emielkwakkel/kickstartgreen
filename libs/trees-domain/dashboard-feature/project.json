@@ -1,0 +1,31 @@
+{
+  "projectType": "library",
+  "root": "libs/trees-domain/dashboard-feature",
+  "sourceRoot": "libs/trees-domain/dashboard-feature/src",
+  "prefix": "trees",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/trees-domain/dashboard-feature"
+      ],
+      "options": {
+        "jestConfig": "libs/trees-domain/dashboard-feature/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/trees-domain/dashboard-feature/src/**/*.ts",
+          "libs/trees-domain/dashboard-feature/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "domain:trees",
+    "type:feature"
+  ]
+}
