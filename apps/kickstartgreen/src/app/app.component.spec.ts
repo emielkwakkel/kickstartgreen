@@ -13,4 +13,13 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
+
+  Array.from({ length: 200 }, (_, idx) => ++idx).forEach(index => {
+    it(`should return index ${index}`, (done) => {
+      setTimeout(() => {
+        expect(index).toBe(index);
+        done();
+      }, 150);
+    })
+  })
 });
