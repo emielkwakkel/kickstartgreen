@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "dash",
+            "prefix": "banking",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "dash",
+            "prefix": "banking",
             "style": "kebab-case"
           }
         ]

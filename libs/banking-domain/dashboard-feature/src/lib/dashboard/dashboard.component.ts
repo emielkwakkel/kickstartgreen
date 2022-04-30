@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { DashboardCard } from '@shared/base-ui/src/lib/dashboard/dashboard.component';
 
 @Component({
-  selector: 'dash-dashboard',
+  selector: 'banking-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })

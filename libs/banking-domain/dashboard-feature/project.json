@@ -2,7 +2,7 @@
   "projectType": "library",
   "root": "libs/banking-domain/dashboard-feature",
   "sourceRoot": "libs/banking-domain/dashboard-feature/src",
-  "prefix": "dash",
+  "prefix": "banking",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
