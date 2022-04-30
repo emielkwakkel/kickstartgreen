@@ -22,7 +22,7 @@
               },
               {
                 "sourceTag": "domain:shared",
-                "onlyDependOnLibsWithTags": []
+                "onlyDependOnLibsWithTags": ["domain:shared"]
               },
               {
                 "sourceTag": "*",
