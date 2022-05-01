@@ -2,16 +2,16 @@
   "version": 2,
   "projects": {
     "account-util": "libs/banking-domain/account-util",
+    "banking-dashboard-ui": "libs/banking-domain/dashboard-ui",
     "base-ui": "libs/shared-domain/base-ui",
     "dashboard-feature": "libs/banking-domain/dashboard-feature",
-    "banking-dashboard-ui": "libs/banking-domain/dashboard-ui",
     "graphql-util": "libs/shared-domain/graphql-util",
     "kickstartgreen": "apps/kickstartgreen",
     "kickstartgreen-e2e": "apps/kickstartgreen-e2e",
     "material-ui": "libs/shared-domain/material-ui",
     "plant-feature": "libs/trees-domain/plant-feature",
     "plant-ui": "libs/trees-domain/plant-ui",
-    "trees-util": "libs/trees-domain/trees-util",
-    "trees-dashboard-ui": "libs/trees-domain/dashboard-ui"
+    "trees-dashboard-ui": "libs/trees-domain/dashboard-ui",
+    "trees-util": "libs/trees-domain/trees-util"
   }
 }
