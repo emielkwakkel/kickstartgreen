@@ -1,6 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { AccountService } from '@banking/account-util/src/lib/account.service';
+
+import { gql, Apollo } from 'apollo-angular';
+
+const getOrdersQuery = gql`
+  query orders($accountId: String) {
+    orders(limit: 5, accountId: $accountId) {
+      id
+      orderPlacedAt
+      handle
+      message
+      reference
+      quantity
+    }
+  }
+`;
 
 @Component({
   selector: 'trees-latest-orders',
@@ -8,15 +22,21 @@ import { AccountService } from '@banking/account-util/src/lib/account.service';
   styleUrls: ['./latest-orders.component.css'],
 })
 export class LatestOrdersUiComponent implements OnInit {
-  @Input() data: { account: string } = { account: 'payment' };
-  displayedColumns = ['category', 'account', 'amount'];
+  displayedColumns = ['reference', 'orderPlacedAt', 'quantity'];
   dataSource = new MatTableDataSource([{}]);
 
-  constructor(private accountService: AccountService) {}
+  constructor(private apollo: Apollo) {}
 
   ngOnInit(): void {
-    this.accountService
-      .getTransactions(this.data.account)
-      .subscribe((transactions) => (this.dataSource.data = transactions));
+    this.apollo
+      .watchQuery<any>({
+        query: getOrdersQuery,
+        variables: {
+          accountId: '1ffb5b0a-7dec-4ef9-a14f-0c1573259bdc',
+        },
+      })
+      .valueChanges.subscribe(({ data }) => {
+        this.dataSource = data.orders;
+      });
   }
 }
