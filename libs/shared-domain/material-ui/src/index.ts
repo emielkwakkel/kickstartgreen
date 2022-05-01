@@ -1,1 +1,1 @@
-export * from './lib/shared-domain-material-ui.module';
+export * from './lib/material-ui.module';
