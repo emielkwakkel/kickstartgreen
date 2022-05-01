@@ -1,4 +1,79 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$primary-palette: (
+ 50: #f3f6e5,
+ 100: #e0e8be,
+ 200: #cad994,
+ 300: #b5ca68,
+ 400: #a4bf45,
+ 500: #94b51a,
+ 600: #84a611,
+ 700: #6f9303,
+ 800: #5a7f00,
+ 900: #345f00,
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: white,
+ )
+);
+
+$secondary-palette: (
+ 50: #e4f5f8,
+ 100: #bae5ed,
+ 200: #92d3e2,
+ 300: #72c2d7,
+ 400: #61b6d0,
+ 500: #55a9ca,
+ 600: #4d9bbd,
+ 700: #4389aa,
+ 800: #3e7897,
+ 900: #325794,
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: white,
+ )
+);
+
+// $primary: mat.define-palette($primary-palette, 700);
+// $accent: mat.define-palette($secondary-palette, 900);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$kg-app-primary: mat-palette($primary-palette, 700);
+$kg-app-accent:  mat-palette($secondary-palette, 900);
+
+// The warn palette is optional (defaults to red).
+$kg-app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$kg-app-theme: mat-dark-theme($kg-app-primary, $kg-app-accent, $kg-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($kg-app-theme);
+
+
+// Emit theme-dependent styles for common features used across multiple components.
+// @include mat.core-theme($my-theme);
+
+// Emit styles for MatButton based on `$my-theme`. Because the configuration
+// passed to `define-light-theme` omits typography, `button-theme` will not
+// emit any typography styles.
+// @include mat.button-theme($my-theme);
+
+// Include the theme mixins for other components you use here.
 
 html,
 body {
@@ -8,3 +83,4 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
