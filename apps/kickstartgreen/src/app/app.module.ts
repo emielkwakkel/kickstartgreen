@@ -10,6 +10,7 @@ import { HomePageComponent } from './home/home-page.component';
 import { BaseUiModule } from '@shared/base-ui';
 import { HttpClientModule } from '@angular/common/http';
 import { GraphQLUtilModule } from '@shared/graphql-util';
+import { environment } from '../environments/environment';
 
 const routes: Routes = [
   {
@@ -64,5 +65,9 @@ const routes: Routes = [
   ],
   declarations: [AppComponent, HomePageComponent],
   bootstrap: [AppComponent],
+  providers: [
+    { provide: 'unFootprintApi', useValue: environment.unFootprintApi },
+    { provide: 'unFootprintApiKey', useValue: environment.unFootprintApiKey },
+  ],
 })
 export class AppModule {}

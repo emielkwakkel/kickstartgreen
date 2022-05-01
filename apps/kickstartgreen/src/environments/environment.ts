@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  unFootprintApi: 'https://api.test.unfootprint.com/graphql',
+  unFootprintApiKey: process.env['UNFOOTPRINT_API_KEY_TEST'],
 };
 
 /*
