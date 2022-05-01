@@ -12,11 +12,11 @@ h4 {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-.mat-column-category {
-  flex: 0 0 50px !important;
-  width: 50px !important;
+.mat-column-quantity {
+  flex: 0 0 40px !important;
+  width: 40px !important;
 }
-.mat-column-amount {
-  flex: 0 0 70px !important;
-  width: 70px !important;
+.mat-column-orderPlacedAt {
+  flex: 0 0 100px !important;
+  width: 100px !important;
 }
