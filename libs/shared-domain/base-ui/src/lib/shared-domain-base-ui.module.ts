@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialUiModule } from '@shared/material-ui/src';
+import { MaterialUiModule } from '@shared/material-ui';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import {
   SharedDashboardComponent,
