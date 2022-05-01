@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectorRef,
   Component,
   ComponentFactoryResolver,
   ComponentRef,
@@ -22,6 +23,7 @@ export interface DashboardCard {
   component: any;
   cols: number;
   rows: number;
+  class?: string;
 }
 
 @Component({
@@ -37,7 +39,7 @@ export class SharedDashboardComponent implements AfterViewInit {
 
   constructor(
     private resolver: ComponentFactoryResolver,
-    private viewContainerRef: ViewContainerRef
+    private cd: ChangeDetectorRef
   ) {}
 
   ngAfterViewInit(): void {
@@ -55,6 +57,7 @@ export class SharedDashboardComponent implements AfterViewInit {
     this.cards?.forEach((card: any, index: any) =>
       this.addComponent(card.component, index, card.data)
     );
+    this.cd.detectChanges();
   }
 
   private addComponent(component: any, index: any, data: any) {

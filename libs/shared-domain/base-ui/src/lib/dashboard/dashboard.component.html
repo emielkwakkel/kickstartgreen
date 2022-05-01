@@ -4,6 +4,7 @@
       *ngFor="let card of cards"
       [colspan]="card.cols"
       [rowspan]="card.rows"
+      [ngClass]="(card.cols === 1 && card.class) ? card.class : 'width-auto'"
     >
       <mat-card class="dashboard-card">
         <mat-card-header *ngIf="card.title">
