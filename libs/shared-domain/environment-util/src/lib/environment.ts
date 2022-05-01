@@ -1,11 +1,13 @@
+import { UNFOOTPRINT_API_KEY_TEST } from './.key';
+
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
   production: false,
-  unFootprintApi: 'https://api.test.unfootprint.com/graphql',
-  unFootprintApiKey: process.env['UNFOOTPRINT_API_KEY_TEST'],
+  unFootprintApiUri: 'https://api.test.unfootprint.com/graphql',
+  unFootprintApiKey: UNFOOTPRINT_API_KEY_TEST,
 };
 
 /*

@@ -1,1 +1,2 @@
-export * from './lib/environment-util.module';
+export * from './lib/environment.base';
+export * from './lib/environment';
