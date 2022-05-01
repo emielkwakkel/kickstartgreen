@@ -1,1 +1,15 @@
-<p>plant-trees works!</p>
+<form [formGroup]="plantTreesForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Number of trees</mat-label>
+    <input matInput formControlName="quantity">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Reference</mat-label>
+    <input matInput formControlName="reference">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Message</mat-label>
+    <textarea matInput formControlName="message"></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary">Plant trees</button>
+</form>

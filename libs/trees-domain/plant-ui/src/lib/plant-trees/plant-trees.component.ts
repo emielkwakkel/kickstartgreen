@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { gql, Apollo } from 'apollo-angular';
 
@@ -15,21 +16,31 @@ const placeOrderMutation = gql`
   templateUrl: './plant-trees.component.html',
   styleUrls: ['./plant-trees.component.scss'],
 })
-export class PlantTreesComponent implements OnInit {
-  constructor(private apollo: Apollo) {}
+export class PlantTreesComponent {
+  plantTreesForm: FormGroup;
+  constructor(private apollo: Apollo, private fb: FormBuilder) {
+    this.plantTreesForm = this.fb.group({
+      message: [
+        'Thank you for planting trees using KickstartGreen.',
+        Validators.required,
+      ],
+      reference: ['KickstartGreen', Validators.required],
+      quantity: [5, Validators.min(0)],
+    });
+  }
 
-  ngOnInit(): void {
+  onSubmit() {
+    const { quantity, message, reference } = this.plantTreesForm.value;
     const variables = {
       order: {
-        quantity: 5,
+        quantity,
         projectId: 1,
-        message: 'Thank you for planting trees using KickstartGreen.',
-        reference: 'KickstartGreen',
+        message,
+        reference,
         externalId: 'KickstartGreen',
       },
       status: 'COMPLETED',
     };
-
     this.apollo
       .mutate<any>({
         mutation: placeOrderMutation,
