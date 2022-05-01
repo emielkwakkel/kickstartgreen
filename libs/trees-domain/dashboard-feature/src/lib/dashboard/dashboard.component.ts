@@ -17,11 +17,20 @@ export class DashboardComponent {
       map(({ matches }) => {
         return [
           {
+            title: 'Latest orders',
+            component: LatestOrdersUiComponent,
+            data: {},
+            cols: matches ? 2 : 1,
+            rows: 1,
+            class: 'width-60',
+          },
+          {
             title: 'Plant Trees',
             component: PlantTreesComponent,
             data: {},
-            cols: 2,
+            cols: matches ? 2 : 1,
             rows: 1,
+            class: 'width-40 left-60',
           },
           {
             title: 'Latest orders',
@@ -29,6 +38,7 @@ export class DashboardComponent {
             data: {},
             cols: 2,
             rows: 1,
+            class: 'width-60',
           },
         ];
       })
