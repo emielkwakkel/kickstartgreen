@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'trees-domain-plant-util',
+  displayName: 'trees-domain-trees-util',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/trees-domain/plant-util',
+  coverageDirectory: '../../../coverage/libs/trees-domain/trees-util',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
