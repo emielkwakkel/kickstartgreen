@@ -1,1 +1,1 @@
-export * from './lib/banking-domain-account-util.module';
+export * from './lib/account-util.module';

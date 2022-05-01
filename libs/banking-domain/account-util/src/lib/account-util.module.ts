@@ -6,4 +6,4 @@ import { AccountService } from './account.service';
   imports: [CommonModule],
   providers: [AccountService],
 })
-export class BankingDomainAccountUtilModule {}
+export class AccountUtilModule {}
