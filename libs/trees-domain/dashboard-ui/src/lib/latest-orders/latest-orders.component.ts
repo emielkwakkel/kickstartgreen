@@ -28,6 +28,10 @@ export class LatestOrdersUiComponent implements OnInit {
   constructor(private apollo: Apollo) {}
 
   ngOnInit(): void {
+    this.getOrders();
+  }
+
+  private getOrders() {
     this.apollo
       .watchQuery<any>({
         query: getOrdersQuery,
@@ -36,7 +40,7 @@ export class LatestOrdersUiComponent implements OnInit {
         },
       })
       .valueChanges.subscribe(({ data }) => {
-        this.dataSource = data.orders;
+        this.dataSource = data.orders.slice(0, 6);
       });
   }
 }
