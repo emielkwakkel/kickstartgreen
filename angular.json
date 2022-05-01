@@ -11,6 +11,7 @@
     "material-ui": "libs/shared-domain/material-ui",
     "plant-feature": "libs/trees-domain/plant-feature",
     "plant-ui": "libs/trees-domain/plant-ui",
+    "environment-util": "libs/shared-domain/environment-util",
     "trees-dashboard-ui": "libs/trees-domain/dashboard-ui",
     "trees-util": "libs/trees-domain/trees-util"
   }

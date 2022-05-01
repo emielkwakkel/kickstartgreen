@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared-domain/environment-util",
+  "sourceRoot": "libs/shared-domain/environment-util/src",
+  "prefix": "kickstartgreen",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared-domain/environment-util"],
+      "options": {
+        "jestConfig": "libs/shared-domain/environment-util/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared-domain/environment-util/src/**/*.ts",
+          "libs/shared-domain/environment-util/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:shared", "type:util"]
+}
