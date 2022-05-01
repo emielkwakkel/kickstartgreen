@@ -11,7 +11,6 @@ import { DashboardCard } from '@shared/base-ui/src/lib/dashboard/dashboard.compo
 @Component({
   selector: 'banking-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
   /** Based on the screen size, switch from standard to one column per row */
