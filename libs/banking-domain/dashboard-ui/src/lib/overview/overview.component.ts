@@ -27,12 +27,6 @@ const ELEMENT_DATA: Overview[] = [
     total: 1500,
     type: 'savings',
   },
-  {
-    name: 'John & Johanna Johannessen',
-    account: 'Shared Savings',
-    total: 12500,
-    type: 'savings',
-  },
 ];
 
 @Component({
