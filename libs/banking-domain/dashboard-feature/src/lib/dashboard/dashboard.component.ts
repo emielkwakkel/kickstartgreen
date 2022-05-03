@@ -27,14 +27,14 @@ export class DashboardComponent {
             rows: 0.5,
           },
           {
-            title: 'Payment: Latest',
+            title: 'Latest transactions - Payment',
             component: LatestTransactionsUiComponent,
             data: { account: 'payment' },
             cols: matches ? 2 : 1,
             rows: 1,
           },
           {
-            title: 'Savings: Latest',
+            title: 'Latest transactions - Savings',
             component: LatestTransactionsUiComponent,
             data: { account: 'savings' },
             cols: matches ? 2 : 1,
