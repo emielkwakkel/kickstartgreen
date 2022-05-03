@@ -3,6 +3,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LatestOrdersUiComponent } from './latest-orders.component';
+import { ApolloTestingModule } from 'apollo-angular/testing';
+import { environment, Environment } from '@shared/environment-util';
 
 describe('DashboardComponent', () => {
   let component: LatestOrdersUiComponent;
@@ -11,7 +13,8 @@ describe('DashboardComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [LatestOrdersUiComponent],
-      imports: [NoopAnimationsModule, LayoutModule],
+      imports: [NoopAnimationsModule, LayoutModule, ApolloTestingModule],
+      providers: [{ provide: Environment, useValue: environment }],
     }).compileComponents();
   }));
 
