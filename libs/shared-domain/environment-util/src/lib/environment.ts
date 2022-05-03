@@ -8,6 +8,8 @@ export const environment = {
   production: false,
   unFootprintApiUri: 'https://api.test.unfootprint.com/graphql',
   unFootprintApiKey: UNFOOTPRINT_API_KEY_TEST,
+  unFootprintUri: 'https://test.unfootprint.com/',
+  unFootprintAccountId: '1ffb5b0a-7dec-4ef9-a14f-0c1573259bdc',
 };
 
 /*

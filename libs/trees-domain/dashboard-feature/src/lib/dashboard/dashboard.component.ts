@@ -8,6 +8,7 @@ import { LatestOrdersUiComponent } from '@trees/dashboard-ui/src';
 @Component({
   selector: 'trees-dashboard',
   templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent {
   /** Based on the screen size, switch from standard to one column per row */
@@ -33,9 +34,9 @@ export class DashboardComponent {
             class: 'width-40 left-60',
           },
           {
-            title: 'Latest orders',
+            title: 'Top orders',
             component: LatestOrdersUiComponent,
-            data: {},
+            data: { type: 'top' },
             cols: 2,
             rows: 1,
             class: 'width-60',

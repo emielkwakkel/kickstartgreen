@@ -1,7 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Environment } from '@shared/environment-util';
 
 import { gql, Apollo } from 'apollo-angular';
+
+interface Order {
+  id: number;
+  orderPlacedAt: Date;
+  handle: string;
+  message: string;
+  uri?: string;
+  reference: string;
+  quantity: number;
+}
 
 const getOrdersQuery = gql`
   query orders($accountId: String) {
@@ -22,13 +33,18 @@ const getOrdersQuery = gql`
   styleUrls: ['./latest-orders.component.css'],
 })
 export class LatestOrdersUiComponent implements OnInit {
-  displayedColumns = ['reference', 'orderPlacedAt', 'quantity'];
-  dataSource = new MatTableDataSource([{}]);
+  @Input() data: { type: string } = { type: 'latest' };
+  displayedColumns = ['reference', 'orderPlacedAt', 'quantity', 'uri'];
+  dataSource = new MatTableDataSource<Order[]>();
 
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo, private env: Environment) {}
 
   ngOnInit(): void {
     this.getOrders();
+  }
+
+  public navigateExternal(uri: string) {
+    window.open(uri, '_blank');
   }
 
   private getOrders() {
@@ -36,11 +52,23 @@ export class LatestOrdersUiComponent implements OnInit {
       .watchQuery<any>({
         query: getOrdersQuery,
         variables: {
-          accountId: '1ffb5b0a-7dec-4ef9-a14f-0c1573259bdc',
+          accountId: this.env.unFootprintAccountId,
         },
       })
       .valueChanges.subscribe(({ data }) => {
-        this.dataSource = data.orders.slice(0, 6);
+        const orders = (this.data.type === 'top'
+          ? [...data.orders].sort(
+              ({ quantity: a }: Order, { quantity: b }: Order) => b - a
+            )
+          : [...data.orders]
+        )
+          .slice(0, 5)
+          .map((order: Order) => {
+            const uri = `${this.env.unFootprintUri}/trees/${order.handle}`;
+            return { ...order, uri };
+          }) as any as MatTableDataSource<Order[]>;
+
+        this.dataSource = orders;
       });
   }
 }
