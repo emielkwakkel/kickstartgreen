@@ -45,12 +45,6 @@ const TRANSACTIONS_PAYMENTS: Overview[] = [
     amount: -39.12,
     type: 'outgoing',
   },
-  {
-    category: 'store',
-    account: 'FlatDotCom',
-    amount: -129.95,
-    type: 'outgoing',
-  },
 ];
 
 const TRANSACTIONS_SAVINGS: Overview[] = [
@@ -81,12 +75,6 @@ const TRANSACTIONS_SAVINGS: Overview[] = [
   {
     category: 'savings',
     account: 'John Johanessen',
-    amount: 500,
-    type: 'incoming',
-  },
-  {
-    category: 'savings',
-    account: 'Johanna Johannessen',
     amount: 500,
     type: 'incoming',
   },
