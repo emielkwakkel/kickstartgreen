@@ -33,7 +33,7 @@ export class PlantTreesComponent {
     const { quantity, message, reference } = this.plantTreesForm.value;
     const variables = {
       order: {
-        quantity,
+        quantity: parseFloat(quantity),
         projectId: 1,
         message,
         reference,
