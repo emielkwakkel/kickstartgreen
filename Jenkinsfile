@@ -2,6 +2,7 @@ pipeline {
     agent { docker { image 'node:latest' } }
     environment {
         HOME = '.'
+        npm_config_cache = 'npm-cache'
     }
 
     stages {
